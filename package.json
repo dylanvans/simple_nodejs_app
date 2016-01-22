@@ -1,0 +1,25 @@
+{
+  "name": "Photoshare",
+  "version": "0.0.1",
+  "description": "Simple application for photo sharing",
+  "private": true,
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "ejs": "~2.3.4",
+    "express": "~4.13.3",
+    "express-session": "^1.13.0"
+  },
+  "devDependencies": {},
+  "scripts": {},
+  "keywords": [
+    "photo",
+    "sharing",
+    "nodejs"
+  ],
+  "author": "",
+  "license": "MIT"
+}
