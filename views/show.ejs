@@ -1,0 +1,43 @@
+<%- include('partials/head.ejs') %>
+
+<%- include('partials/aside.ejs') %>
+
+	<h2><%= title %></h2>
+	<div id="containimg">
+		<div class="enkelimg">
+			<img src="/uploads/<%=results[0].filename %>">
+		</div>
+	</div>
+	<% if(dec){ %>
+	<iframe
+		  width="450"
+		  height="250"
+		  frameborder="0" style="border:0"
+		  src="https://www.google.com/maps/embed/v1/streetview?key=AIzaSyAlEhWZ6kOT3P2Ln66RzBzOaXGC4D_yj5g&location=<%=dec[0] +',' + dec[1] %>&heading=210&pitch=10&fov=35" >
+	</iframe>
+	<% } %>
+
+	<form action="/photo/<%=req.params.index%>/comment" method="post">
+		<% if(!req.session.username){ %>
+			<label for="field_name">Name: </label>
+  			<input type="text" id="field_name" name="commenter" value="">
+		<% } %>
+ 			<label for="field_comment">Your Reaction: </label>
+  			<textarea for="field_comment" name="comment" required></textarea>
+
+  	<button type="submit">Place!</button>
+	</form>
+
+	
+
+	<% if(dataComments){ %>
+		<section id="comments">
+		<% for (var i = 0; i < dataComments.length; i++) { %>
+			<div class="singleComment">
+				<h3>Door: <%= dataComments[i].commenter %> </h3>
+				<p><%= dataComments[i].comment %></p>
+			</div>
+	<% }; %>
+		</section>
+	<% }; %>
+<%- include('partials/foot.ejs') %>

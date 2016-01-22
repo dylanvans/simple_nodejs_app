@@ -1,0 +1,16 @@
+<%- include('partials/head.ejs') %>
+
+<%- include('partials/aside.ejs') %>
+
+	<h2><%= title %></h2>
+	<div id="containimg">
+		<% if(results.length > 0) {
+			for (var i = 0; i < 6; i++) { %>
+				<a href="<%= req.baseUrl + '/photo/' + results[i].id %>">
+					<div class="enkelimg">
+						<img src="/uploads/<%=results[i].filename%>">
+					</div>
+				</a>
+		<% }; }; %>
+	</div>
+<%- include('partials/foot.ejs') %>

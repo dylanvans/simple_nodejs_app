@@ -1,0 +1,25 @@
+<%- include('../partials/head.ejs') %>
+
+<%- include('../partials/aside.ejs') %>
+
+	<h2><%= title %></h2>
+
+	<form action="<%= req.baseUrl + "/upload" %>" method="post" enctype="multipart/form-data">
+  		<label for="test-file">Upload Your Picture:</label>
+    	<input type="file" name="test-file"/>
+  		<label for="submit"></label>
+    	<input type="submit" value="Upload"/>
+	</form>
+
+	<h3>Your Pictures</h3>
+	<div id="containimg">
+		<% if(results.length > 0) {
+			for (var i = 0; i < results.length; i++) { %>
+				<a href="<%= '/photo/' + results[i].id %>">
+					<div class="enkelimg">
+						<img src="/uploads/<%=results[i].filename %>">
+					</div>
+				</a>
+		<% }; }; %>
+	</div>
+<%- include('../partials/foot.ejs') %>

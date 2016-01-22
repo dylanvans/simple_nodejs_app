@@ -1,0 +1,16 @@
+<%- include('../partials/head.ejs') %>
+
+<%- include('../partials/aside.ejs') %>
+
+<h2> Log In:</h2>
+<form action="<%= postUrl %>" method="post">
+ 	<label for="field_username">Username: </label>
+  	<input type="text" id="field_username" name="username" value="" required>
+
+ 	<label for="field_password">Password: </label>
+  	<input type="password" id="field_password" name="password" value="" required>
+
+  	<button type="submit">Login!</button>
+</form>
+
+<%- include('../partials/foot.ejs') %>
